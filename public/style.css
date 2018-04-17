@@ -1,10 +1,30 @@
 li {
   padding: 2px;
   margin: 2px;
+  display: inline-table;
 }
 
 img {
   max-height: 100px;
   max-width: 100px;
   padding: 0px 10px;
+}
+
+h1 {
+  font-size: 45px;
+  font-family: sans-serif;
+  text-decoration: underline;
+  text-align: center;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: black;
+  color: #10AED5;
+}
+
+.dog {
+  position: absolute;
+  bottom: 550px;
+  right: 760px;
 }
