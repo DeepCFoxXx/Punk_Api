@@ -20,4 +20,12 @@ var renderList = function (beersObjects) {
   mainDiv.appendChild(list);
 };
 
+var createListItem = function (beerObject) {
+  var li = document.createElement('li');
+  li.innerText = beerObject.name;
+  var img = createImage(beerObject);
+  li.appendChild(img);
+  return li
+};
+
 window.addEventListener('load', app);
