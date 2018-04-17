@@ -35,4 +35,16 @@ var createImage = function (beer) {
   return image
 };
 
+var createIngredientsList = function (beerObject) {
+  var list = document.createElement('ul');
+  var ingredients = combineIngredients(beerObject);
+  
+  ingredients.forEach(function (ingredientString) {
+    var listItem = document.createElement('li');
+    listItem.innerText = ingredientString;
+    list.appendChild(listItem);
+  });
+  return list;
+};
+
 window.addEventListener('load', app);
