@@ -9,4 +9,15 @@ var app = function () {
   request.send();
 };
 
+var renderList = function (beersObjects) {
+  var mainDiv = document.getElementById('main');
+  var list = document.createElement('ul');
+
+  beersObjects.forEach(function (beer) {
+    var li = createListItem(beer);
+    list.appendChild(li);
+  });
+  mainDiv.appendChild(list);
+};
+
 window.addEventListener('load', app);
