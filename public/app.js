@@ -38,7 +38,7 @@ var createImage = function (beer) {
 var createIngredientsList = function (beerObject) {
   var list = document.createElement('ul');
   var ingredients = combineIngredients(beerObject);
-  
+
   ingredients.forEach(function (ingredientString) {
     var listItem = document.createElement('li');
     listItem.innerText = ingredientString;
@@ -46,5 +46,20 @@ var createIngredientsList = function (beerObject) {
   });
   return list;
 };
+
+var combineIngredients = function (beer) {
+  var malts = beer.ingredients.malt;
+  var hops = beer.ingredients.hops;
+  var combinedIngredients = malts.concat(hops);
+
+  var ingredientNameStrings = combinedIngredients.map(function (ingredient) {
+    return ingredient.name;
+  });
+
+  ingredientNameStrings.push(beer.ingredients.yeast);
+
+  var uniqueNames = removeDuplicates(ingredientNameStrings);
+  return uniqueNames;
+}
 
 window.addEventListener('load', app);
