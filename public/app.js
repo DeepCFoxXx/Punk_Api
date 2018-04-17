@@ -28,4 +28,11 @@ var createListItem = function (beerObject) {
   return li
 };
 
+var createImage = function (beer) {
+  var image = document.createElement('img');
+  image.src = beer.image_url;
+  image.alt = beer.name;
+  return image
+};
+
 window.addEventListener('load', app);
